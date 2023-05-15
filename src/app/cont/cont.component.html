@@ -1,0 +1,89 @@
+<app-bara>
+
+</app-bara>
+
+<app-baraproduse>
+
+</app-baraproduse>
+
+
+<div *ngIf="!ServiciuConturiService.GetConectat(); then elseBlock else thenBlock"></div>
+<ng-template #elseBlock>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <form class="example-form">
+      <mat-form-field class="example-form">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="email" name="email">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="example-form">
+        <mat-label>Parolă</mat-label>
+        <input [(ngModel)]="parola" name="parola" matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+
+    <div class="butoncosgol"><button (click)="ConecteazaCont()" mat-raised-button color="primary">Intră în cont</button></div>
+    <div>
+      <div class="butoncosgol">
+        Nu ai cont ?<button (click)="butoncontnou()" mat-button color="primary">Creează un cont nou</button>
+      </div>
+    </div>
+</ng-template>
+
+<ng-template #thenBlock>
+  <div style="text-align:right; margin-top:1% ;margin-right:2.7%; font-size:130%">
+    Salut, {{ServiciuConturiService.GetEmail()}}
+  </div>
+  <div style="margin-right:6%" class="butoniesi"><button (click)="IesiDinCont()" mat-raised-button color="primary">Ieși din cont </button></div>
+
+  <br />
+  <br />
+
+  <div>
+    <p style="margin-left:10%; font-size:120%">Comenzi plasate: ({{ServiciuConturiService.getNumarComenzi()}} comenzi)</p>
+    <br />
+  </div>
+
+  <div *ngFor="let comanda of Comenzi; let i=index ">
+    <mat-expansion-panel style="width:80% ;margin-left:10%;margin-right:10%" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Comanda  {{Coduri[i]}}
+        </mat-panel-title>
+        <mat-panel-description style="display: flex; justify-content: flex-end">
+          {{comanda.Data}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div *ngFor="let produs of ProduseDinComenzi[i]; let j=index ">
+        <table class="tabel" style="border-color: rebeccapurple">
+          <tr>
+            <td> <div style="text-align: center"><img class="imagineprodus" src="../../assets/{{produs.numeimagine}}" /></div></td>
+            <td> <div style="text-align: center" class="textprodus">{{produs.numeprodus}}</div></td>
+            <td> <div style="text-align: center" class="textprodus">Cantitate:{{produs.cantitate}}</div></td>
+            <td> <div style="text-align: center" class="textprodus">Pret:{{produs.pret}}Lei</div></td>
+
+        </table>
+
+      </div>
+      <table class="tabel" style="border-color: coral">
+        <tr>
+          <td> <div style="text-align: center" class="textprodus">Data: {{comanda.Data}}</div></td>
+          <td> <div style="text-align: center" class="textprodus">Adresa: {{comanda.Adresa}}</div></td>
+          <td> <div style="text-align: center" class="textprodus">Plată: {{comanda.Plata}}</div></td>
+          <td> <div style="text-align: center" class="textprodus">Total: {{comanda.Total}}Lei</div></td>
+      </table>
+    </mat-expansion-panel>
+  </div>
+</ng-template>
+

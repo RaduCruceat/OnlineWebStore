@@ -1,0 +1,54 @@
+<app-bara>
+
+</app-bara>
+<app-baraproduse>
+
+</app-baraproduse>
+<br />
+<br />
+<br />
+<br />
+<br />
+<div *ngIf="!ServiciuConturiService.GetConectat(); then elseBlock else thenBlock"></div>
+<ng-template #elseBlock>
+  <br />
+  <br />
+  <br />
+  <form class="example-form">
+    <mat-form-field class="example-form">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="email" name="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="example-form">
+      <mat-label>Parolă</mat-label>
+      <input [(ngModel)]="parola" name="parola" matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <div class="example-margin">
+      <mat-checkbox style="display: inline-block ;position: absolute;" color="primary" class="example-margin" (change)="apasatBifa($event)">
+        Sunt de acord cu
+        <button style="display:inline-block" (click)="butonpaginatermeni()" mat-button color="primary">Termenii și Condițiile</button>
+        acestui website
+      </mat-checkbox>
+    </div>
+    <br />
+
+    <div class="butoncosgol"><button (click)="CreeazaCont()" [disabled]="butoninchis" type="submit" mat-raised-button color="primary">Creează un cont nou</button></div>    
+    <div class="butoncosgol" style="margin-left:4%">
+      Ai deja cont ?<button (click)="butoncont()" mat-button color="primary">Intră în cont</button>
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #thenBlock>
+  <div style="text-align:center; margin-top:4%;">
+    Conectat cu email-ul: {{ServiciuConturiService.GetEmail()}}
+  </div>
+  <div style="display: flex; margin-top: 1.2%; justify-content: center; align-items: center;">
+    <button (click)="butoncont()" mat-button color="primary">Acceseaza contul</button>
+  </div>
+</ng-template>

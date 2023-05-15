@@ -1,0 +1,84 @@
+<div *ngIf="!ServiciuConturiService.GetConectat(); then elseBlock else thenBlock"></div>
+<ng-template #thenBlock>
+  <mat-nav-list>
+    <mat-stepper orientation="vertical" [linear]=true #stepper>
+      <mat-step>
+        <ng-template matStepLabel>Adresa de email a contului</ng-template>
+        <div>{{ServiciuConturiService.GetEmail()}}</div>
+        <div>
+          <button mat-button matStepperNext>Înainte</button>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="firstFormGroup"  >
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Adresa pt. livrare și Metoda de plată</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>Adresa Livrării</mat-label>
+            <input [(ngModel)]="livrare" name="livrare" matInput formControlName="secondCtrl" placeholder="Ex. Sibiu Sibiu Valea Aurie Nr.11"
+               required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+           <mat-label>Metoda de plată</mat-label>
+           <mat-select [(ngModel)]="plata" name="plata" formControlName="firstCtrl" required>
+           <mat-option value="Card">Card</mat-option>
+           <mat-option value="Ramburs">Ramburs</mat-option>
+           </mat-select>
+          </mat-form-field>
+
+          <div>
+            <button mat-button matStepperPrevious>Înapoi</button>
+            <button mat-button matStepperNext>Înainte</button>
+          </div>
+
+        </form>
+      </mat-step>
+      <mat-step>
+
+        <ng-template matStepLabel>Sumar Comandă</ng-template>
+        <table *ngFor="let produs of Produse; let i=index" class="tabel">
+          <tr>
+            <td><div  style="text-align:center" class="textprodus">{{produs.numeprodus}}</div></td>
+            <td>  <div  style="text-align: center " class="textprodus"> Cantitate: {{produs.cantitate}}</div></td>
+            <td> <div  style="text-align: left" class="textprodus">Pret: {{produs.pret}}Lei</div></td>
+        </table>
+
+          <table class="tabel">
+            <tr>
+              <th></th>         
+              <th></th>
+              <th class="textprodus">Produse:</th>
+              <th class="textprodus">{{sumtotal}}Lei</th> 
+            </tr>
+
+            <tr>
+              <th></th>
+              <th></th>
+              <th class="textprodus">Transport:</th>
+              <th class="textprodus">{{prettransport}} Lei </th>
+            </tr>
+
+            <tr>
+              <th></th>  
+              <th></th>
+              <th class="textprodus">Pret Total:</th>
+              <th class="textprodus">{{prettransportsiproduse}} Lei</th>
+            </tr>
+          </table>
+        
+          <div>
+            <button mat-button matStepperPrevious>Înapoi</button>    
+            <button mat-button (click)="setDoc()">Finalizează Comanda</button>
+          </div>
+
+      </mat-step>
+    </mat-stepper>
+  </mat-nav-list>
+</ng-template >
+
+<ng-template #elseBlock>
+  <mat-nav-list>
+    <div style="text-align:center">Nu sunteți conectat</div>
+  </mat-nav-list>
+</ng-template>

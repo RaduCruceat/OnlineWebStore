@@ -1,0 +1,15 @@
+
+.imaginefundal {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top:7%;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.textinfo {
+    margin-left:4%;
+}
+

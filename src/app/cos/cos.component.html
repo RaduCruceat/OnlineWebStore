@@ -1,0 +1,76 @@
+<app-bara>
+
+</app-bara>
+
+<app-baraproduse>
+
+</app-baraproduse>
+
+<table *ngFor="let produs of Produse; let i=index" class="tabel">
+  <tr>
+    <td>
+      <img class="imagineprodus" style="height:120px" src="../../assets/{{produs.numeimagine}}" />
+    </td>
+    <td><div style="text-align:center" class="textprodus">{{produs.numeprodus}}</div></td>
+
+    <td class="butoncantitatest">
+      <button (click)="minuscantitate(i)" mat-icon-button>
+        <mat-icon>remove_circle_outline</mat-icon>
+      </button>
+    </td>
+
+    <td><div style="text-align: center ;font-size: 160%;"> Cantitate: {{produs.cantitate}}</div></td>
+
+    <td class="butoncantitatedr">
+      <button (click)="pluscantitate(i)" mat-icon-button>
+        <mat-icon>add_circle_outline</mat-icon>
+      </button>
+    </td>
+
+    <th><div style="text-align: left ;font-size: 160%;">Pret: {{produs.pret}}Lei</div></th>
+  </tr>
+</table>
+
+<div *ngIf="!cosService.getobiectincos(); then elseBlock else thenBlock"></div>
+
+<ng-template #thenBlock>
+<table class="tabel">
+  <tr >
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th class="textprodus">Produse:</th>
+    <th class="textprodus">{{sumtotal}}Lei</th>
+  </tr>
+
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th><button (click)="openBottomSheet()" class="butoncomanda" mat-raised-button color="primary">Comanda</button></th>
+    <th class="textprodus">Transport:</th>
+    <th class="textprodus">{{prettransport}} Lei </th>
+  </tr>
+
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th class="textprodus">Pret Total:</th>
+    <th class="textprodus">{{prettransportsiproduse}} Lei</th>
+  </tr>
+
+ 
+</table>
+</ng-template>
+<ng-template #elseBlock>
+  <div class="textcosgol">Coșul tău de cumpărături este gol, te rugăm să te întorci la pagina principală.</div>
+  <div class="butoncosgol"><button (click)="butonhome()" mat-raised-button color="primary">Înapoi la pagina principală</button></div>
+</ng-template>
+
+

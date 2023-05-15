@@ -1,0 +1,15 @@
+.imagineprodus {
+  width: 17%;
+  margin-left: 20%;
+  margin-top: 5%;
+  height: auto;
+  display: inline-block;
+  text-align: center;
+}
+.textprodus {
+  text-align: center;
+  margin-top:3.8%;
+  font-size: 130%;
+  height: auto;
+}
+

@@ -1,0 +1,18 @@
+.titlu {
+  font-size: 200%;
+  text-align:center;
+  margin-top: 3%;
+}
+.text {
+  margin-left: 12%;
+  margin-right: 17%;
+  font-size: 130%;
+  margin-top: 4%;
+  text-align: center;
+}
+.butoncosgol {
+  display: flex;
+  margin-top: 1.2%;
+  justify-content: center;
+  align-items: center;
+}

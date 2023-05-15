@@ -1,0 +1,20 @@
+
+.imaginefundal {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 7%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.tabel {
+  table-layout: fixed;
+  width: 1600px;
+  margin-left:6%;
+  margin-right: 6%;
+  margin-top: 2%;
+}

@@ -1,0 +1,17 @@
+<img  (click)="butonhome()" src="../../assets/logolego.png" class=" imaginemica" >
+
+<div class="titlu">
+  Magazin Lego
+</div>
+
+<button mat-icon-button (click)="butoncos()" class="example-icon favorite-icon imagdreapta" aria-label="Example icon-button with heart icon">
+  <mat-icon matBadge="{{cosService.getobiectincos()}}" matBadgeColor="primary">shopping_cart_checkout</mat-icon>
+</button>
+<div class="dreapta">Coș</div>
+
+<button mat-icon-button (click)="butoncont()" class="example-icon favorite-icon imagdreapta" aria-label="Example icon-button with heart icon">
+  <mat-icon>account_box</mat-icon>
+</button>
+<div class="dreapta">Contul meu</div>
+
+
