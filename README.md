@@ -1,6 +1,4 @@
-<img style="display: block;
-        margin: 0 auto;justify-content: center; /* Center horizontally */
-        align-items: center" src="https://github.com/RaduCruceat/OnlineWebStore/raw/master/src/assets/HomePageScreen.png" alt="Home Page Screen">
+<img style="justify-content: center;align-items: center" src="https://github.com/RaduCruceat/OnlineWebStore/raw/master/src/assets/HomePageScreen.png" alt="Home Page Screen">
 <img src="https://github.com/RaduCruceat/OnlineWebStore/raw/master/src/assets/ProductsPageScreen.png" alt="Products Page Screen">
 <img src="https://github.com/RaduCruceat/OnlineWebStore/raw/master/src/assets/OrderPageScreen.png" alt="Order Page Screen">
 <img src="https://github.com/RaduCruceat/OnlineWebStore/raw/master/src/assets/CompletedOrdersScreen.png" alt="Completed Orders Screen">
