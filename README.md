@@ -1,3 +1,9 @@
+<img src="https://github.com/RaduCruceat/OnlineWebStore/raw/master/src/assets/HomePageScreen.png" alt="Home Page Screen">
+<img src="https://github.com/RaduCruceat/OnlineWebStore/raw/master/src/assets/ProductsPageScreen.png" alt="Products Page Screen">
+<img src="https://github.com/RaduCruceat/OnlineWebStore/raw/master/src/assets/OrderPageScreen.png" alt="Order Page Screen">
+<img src="https://github.com/RaduCruceat/OnlineWebStore/raw/master/src/assets/CompletedOrdersScreen.png" alt="Completed Orders Screen">
+
+
 # Proiect
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
