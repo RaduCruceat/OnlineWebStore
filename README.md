@@ -6,7 +6,7 @@ It can be used to create or show buy orders of our stored products using your cu
 
 ## Website Link
 
-[Check out the Online Web Store here!](https://magazindelego.firebaseapp.com/)
+[Magazin Lego](https://magazindelego.firebaseapp.com/)
 
 ## Features
 
@@ -24,7 +24,8 @@ It can be used to create or show buy orders of our stored products using your cu
 - TypeScript
 - Angular
 - Firebase Database
-
+<br>
+<br>
 <img src="https://raw.githubusercontent.com/RaduCruceat/OnlineWebStore/master/src/assets/StoreWebsite.gif" alt="Website">
 
 
