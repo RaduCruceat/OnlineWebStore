@@ -1,5 +1,4 @@
-<img src="https://raw.githubusercontent.com/RaduCruceat/OnlineWebStore/master/src/assets/StoreWebsite.gif
-" alt="Website">
+<img src="https://raw.githubusercontent.com/RaduCruceat/OnlineWebStore/master/src/assets/StoreWebsite.gif" alt="Website">
 
 
 
