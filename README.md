@@ -1,6 +1,6 @@
-<img src="https://github.com/RaduCruceat/OnlineWebStore/raw/master/src/assets/ProductsPageScreen.png" alt="Products Page Screen">
-<img src="https://github.com/RaduCruceat/OnlineWebStore/raw/master/src/assets/OrderPageScreen.png" alt="Order Page Screen">
-<img src="https://github.com/RaduCruceat/OnlineWebStore/raw/master/src/assets/CompletedOrdersScreen.png" alt="Completed Orders Screen">
+<img src="https://raw.githubusercontent.com/RaduCruceat/OnlineWebStore/master/src/assets/StoreWebsite.gif
+" alt="Website">
+
 
 
 # Proiect
